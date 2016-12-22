@@ -1,0 +1,6 @@
+name = Media Sitemap
+description = This module is used for creating image sitemap for Google using media module.
+core = 7.x
+dependencies[] = media
+configure = admin/config/media/media_sitemap/list
+package = Media
