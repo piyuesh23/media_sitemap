@@ -10,6 +10,7 @@ namespace Drupal\media_sitemap\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Driver\mysql\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\media_sitemap\MediaSitemapGenerator;
 
 /**
  * Class MediaSitemapBatchController.
@@ -52,7 +53,7 @@ class MediaSitemapBatchController extends ControllerBase {
       'operations' => array(
         array('\Drupal\media_sitemap\MediaSitemapGenerator::generateSitemap', array()),
       ),
-      'finished' => '\Drupal\media_sitemap\MediaSitemapGenerator::sitemapGenerateFinished'
+      'finished' => 'MediaSitemapGenerator::sitemapGenerateFinished'
     );
 
     batch_set($batch);
